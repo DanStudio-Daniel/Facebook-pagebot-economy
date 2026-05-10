@@ -1,0 +1,7 @@
+{
+  "token": "YOUR_PAGE_ACCESS_TOKEN",
+  "verifyToken": "YOUR_VERIFY_TOKEN",
+  "adminID": "YOUR_PSID_ADMIN",
+  "mongoURI": "mongodb://localhost:27017/economy_bot",
+  "prefix": ""
+}
