@@ -1,10 +1,10 @@
 module.exports = {
   metadata: {
     name: "help",
-    description: "View all commands",
-    usage: "help",
+    description: "Display the command menu",
+    usage: "help <command>",
     adminOnly: false,
-    aliases: ["h", "cmds"]
+    aliases: ["cmds", "menu"]
   },
   async execute(event, player, args, sendMessage) {
     const fs = require('fs');
@@ -21,14 +21,33 @@ module.exports = {
           break;
         }
       }
-      if (found) return sendMessage(event.sender.id, `📖 ${found.name}\n${found.description}\nUsage: ${found.usage}`);
+      
+      if (found) {
+        return sendMessage(event.sender.id, 
+          `✨ COMMAND INFO ✨\\n` +
+          `━━━━━━━━━━━━━━\\n` +
+          `🏷️ Name: ${found.name}\\n` +
+          `📝 Info: ${found.description}\\n` +
+          `🚀 Usage: ${found.usage}\\n` +
+          `🔒 Admin: ${found.adminOnly ? "Yes" : "No"}\\n` +
+          `🔗 Aliases: ${found.aliases.join(', ') || "None"}`
+        );
+      }
     }
 
-    let list = "📜 Commands:\n";
+    let menu = "🎮 ECONOMY BOT MENU 🎮\\n";
+    menu += "━━━━━━━━━━━━━━\\n";
+    
     cmdFiles.forEach(file => {
       const cmd = require(path.join(__dirname, file));
-      list += `- ${cmd.metadata.name}\n`;
+      if (!cmd.metadata.adminOnly) {
+        menu += `🔹 ${cmd.metadata.name}\\n`;
+      }
     });
-    sendMessage(event.sender.id, list);
+
+    menu += "━━━━━━━━━━━━━━\\n";
+    menu += "💡 Tip: Type 'help <command>' for more details.";
+    
+    sendMessage(event.sender.id, menu);
   }
 };
