@@ -1,7 +1,7 @@
 {
   "token": "EAAW7bgNPIuABRZAPTL8DPyZCRwcfpUCgmP9c6vXibUJ5MTy7NIQHLMjHpZBiid2lVR4ZCeiZAG9uwgnXMcbExzjm81je0otmgPcZCHBYdpTQBoY9gIVlXQ565CSAtJ6vtilTPM9sWHJU1kMuO4k0F4iRes8xfvnlPP0mYvWF5Y61vlpmyufLZC6MjoOtHQVQ7S0XcLlmQZDZD",
   "verifyToken": "key",
-  "adminID": "YOUR_PSID_ADMIN",
+  "adminID": "26371725435831344",
   "mongoURI": "mongodb+srv://danielmojar84_db_user:nDG9hpTU0uHZtxYO@cluster0.wsk0egt.mongodb.net/?appName=Cluster0",
   "prefix": ""
 }
